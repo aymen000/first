@@ -20,7 +20,6 @@ public class ActrorsController {
 	@RequestMapping("/actorsList")
 	public String displayActors(Model model) {
 		model.addAttribute("actors", actorService.getActors());
-		System.out.println("here in the controller");
 		return "actorsList";
 
 	}
