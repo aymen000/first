@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>INDEX</title>
+</head>
+<body>
+	<h1>Here is the Actors List</h1>
+	<table name="actors">
+		<tr>
+			<th>Name</th>
+			<th>Rating</th>
+			<th>Delete</th>
+		</tr>
+		<tr th:each="actor : ${actors}">
+			<td th:utext="${actor.name}"></td>
+			<td th:utext="${actor.rating}"></td>
+			<td><a th:href="@{/delete_actor(name=${actor.name})}"
+				class="btn btn-danger">Delete</a></td>
+	</table>
+	<a th:href=@{/addActor}>
+		<button type="submit" name="add actor" class="btn btn-success">Add</button>
+	</a>
+</body>
+</html>
